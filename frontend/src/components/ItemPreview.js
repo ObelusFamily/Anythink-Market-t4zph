@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
-import { HandleEmptyImageUrl } from "../helpers/handleEmptyImageUrl.js";
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -30,8 +29,6 @@ const ItemPreview = (props) => {
     }
   };
 
-  const itemImage = HandleEmptyImageUrl(item.image);
-
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -39,7 +36,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={itemImage}
+        src={item.image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />

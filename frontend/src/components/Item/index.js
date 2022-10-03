@@ -27,7 +27,7 @@ class Item extends React.Component {
         agent.Items.get(this.props.match.params.id),
         agent.Comments.forItem(this.props.match.params.id),
       ])
-  );
+    );
   }
 
   componentWillUnmount() {
@@ -45,8 +45,8 @@ class Item extends React.Component {
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
-    
-    const itemImage = HandleEmptyImageUrl(this.props.item.image)
+
+    const itemImage = HandleEmptyImageUrl(this.props.item.image);
     return (
       <div className="container page">
         <div className="text-dark">
